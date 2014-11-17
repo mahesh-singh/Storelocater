@@ -38,6 +38,9 @@ def before_request():
 from app.users.views import mod as usersModule
 app.register_blueprint(usersModule)
 
+from app.locations.views import mod as locationModule
+app.register_blueprint(locationModule)
+
 
 from app.public.views import mod as publicModule
 app.register_blueprint(publicModule)
