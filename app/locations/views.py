@@ -1,8 +1,8 @@
-from flask import Blueprint, request, render_template, redirect, url_for
+from flask import Blueprint, request, render_template, redirect, url_for, g
 from flask.ext.login import login_user, login_required
 
 from app import db
-from app.locations.models import Location
+from app.locations.models import Location, Opening
 from app.locations.forms import LocationForm
 
 mod = Blueprint('location', __name__, url_prefix='/location')
@@ -10,7 +10,10 @@ mod = Blueprint('location', __name__, url_prefix='/location')
 @mod.route('/')
 @login_required
 def home():
-	return render_template('locations/index.html')
+	#get current userid
+	user_id = g.user.id
+	locations = Location.query.filter_by(id = user_id)
+	return render_template('locations/index.html', locations = locations)
 
 
 @mod.route('/add')

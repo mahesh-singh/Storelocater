@@ -1,4 +1,48 @@
 {% extends "base.html" %}
  {% block content %}
-	this is location's home
+ 	<div>
+ 		<h3>
+ 			My locations
+ 		</h3>
+ 		<a data-toggle="modal" id="hrefAddLocations" href="{{ url_for('location.add') }}" data-target="#modalLocation">Click me</a> 		
+ 	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>
+					Name
+				</th>
+				<th>
+					Address
+				</th>
+				<th>
+					Openings
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for location in locations %}
+				<tr>
+					<td>
+						location.name
+					</td>
+					<td>
+						location.address_one
+					</td>
+					<td>
+						location.openings
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+<div class="modal fade" id="modalLocation" tabindex="-1" role="dialog">
+    
+</div>
+
  {% endblock %}
+
+{% block script %}
+	<script src="/static/js/location.js"></script>
+{% endblock %} 

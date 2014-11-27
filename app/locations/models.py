@@ -5,6 +5,7 @@ class Location(db.Model):
 
 	id = db.Column(db.Integer, db.Sequence('location_id_seq'), primary_key=True)
 	user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+	code = db.Column(db.String(50))
 	name = db.Column(db.String(100), nullable=False)
 	desc = db.Column(db.String(1000))
 	address_one = db.Column(db.String(1000), nullable=False)
@@ -18,6 +19,9 @@ class Location(db.Model):
 	url = db.Column(db.String(1000))
 	lon = db.Column(db.Float)
 	lat = db.Column(db.Float)
+	openings = db.relationship('Opening', backref='openings', lazy='dynamic')
+	deleted = db.Column(db.Boolean, default = False)
+	published = db.Column(db.Boolean, default = False)
 	created_on = db.Column(db.DateTime, default = db.func.now())
 	updated_on = db.Column(db.DateTime, default = db.func.now(), onupdate = db.func.now())
 
