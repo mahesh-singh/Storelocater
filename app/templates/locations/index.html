@@ -4,7 +4,7 @@
  		<h3>
  			My locations
  		</h3>
- 		<a id="hrefAddLocations">Add new location</a> 		
+ 		<a id="hrefAddLocations" href="#">Add new location</a> 		
  	</div>
 	<table>
 		<thead>	
@@ -37,8 +37,11 @@
 		</tbody>
 	</table>
 
-<div class="modal fade" id="modalLocation" tabindex="-1" role="dialog">
-    
+<div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="div-modal-content">
+	</div>
+  </div>
 </div>
 
  {% endblock %}

@@ -3,16 +3,12 @@ from wtforms import TextField, PasswordField, BooleanField, TextAreaField, Selec
 from wtforms.validators import Required, EqualTo, Email
 import pycountry
 
-class LocationForm(Form):
+class LocationAddForm(Form):
 	name = TextField('Name', [Required()])
-	address_one = TextField('Address line 1', [Required()])
-	address_two = TextField('Address line 2', [Required()])
+	address_one = TextField('Street address', [Required()])
+	address_two = TextField('Address line 2')
 	city = TextField('City', [Required()])
-	state = TextField('City', [Required()])
-	country = SelectField(u'Programming Language', 
+	state = TextField('State', [Required()])
+	country = SelectField(u'Country', 
 		choices=[(country.alpha2, country.name) for country in pycountry.countries]) 
-	email = TextField('Email', [Email()])
-	url = TextField('URL')
-	phone_one = TextField('Primary Phone')
-	phone_two = TextField('Alertnate Phone')
-	desc = TextAreaField('Description')
+	zip_code = TextField('Zip code')

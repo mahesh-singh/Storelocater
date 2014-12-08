@@ -13,6 +13,7 @@ class Location(db.Model):
 	city = db.Column(db.String(100))
 	state = db.Column(db.String(100))
 	country = db.Column(db.String(100))
+	zip_code = db.Column(db.String(10))
 	phone_one = db.Column(db.String(100))
 	phone_two = db.Column(db.String(100))
 	email = db.Column(db.String(200))

@@ -3,9 +3,9 @@ from flask.ext.login import login_user, login_required
 
 from app import db
 from app.locations.models import Location, Opening
-from app.locations.forms import LocationForm
+from app.locations.forms import LocationAddForm
 
-mod = Blueprint('location', __name__, url_prefix='/location')
+mod = Blueprint('locations', __name__, url_prefix='/location')
 
 @mod.route('/')
 @login_required
@@ -19,5 +19,6 @@ def home():
 @mod.route('/add')
 @login_required
 def add():
-	locationForm = LocationForm(request.form)
-	return render_template('locations/add.html', form = locationForm)
+	locationAddForm = LocationAddForm(request.form)
+	
+	return render_template('locations/add.html', form = locationAddForm)

@@ -18,3 +18,8 @@ easy_install http://www.stickpeople.com/projects/python/win-psycopg/2.5.4/psycop
 - Setting Up Postgres, SQLAlchemy, and Alembic https://realpython.com/blog/python/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/
 - Flask-Migrate: Alembic database migration wrapper for Flask http://blog.miguelgrinberg.com/post/flask-migrate-alembic-database-migration-wrapper-for-flask
 - https://github.com/mattupstate/overholt
+
+TODO:
+Validation through  - http://parsleyjs.org/
+Flow: Create location -> Redirect to edit location page where he can edit various sections. 
+location listing: Datatable.js 
